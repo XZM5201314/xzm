@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XZM's Blog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">XZM's Blog</a>
+            <ul class="nav-menu">
+                <li><a href="#">首页</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">文章分类</a>
+                    <div class="dropdown-content">
+                        <a href="#">生活感悟</a>
+                        <a href="#">旅行见闻</a>
+                        <a href="#">技术分享</a>
+                    </div>
+                </li>
+                <li><a href="#">关于我</a></li>
+                <li><a href="#" id="contact-btn">联系我</a></li>
+                <li class="admin-link" style="display: none;">
+                    <a href="admin.html" class="admin-btn">后台管理</a>
+                </li>
+                <li class="user-actions">
+                    <span class="logged-in" style="display: none;">
+                        <span class="username"></span>
+                        <button id="logoutBtn">退出</button>
+                    </span>
+                    <span class="logged-out">
+                        <a href="login.html" class="auth-btn">登录</a>
+                        <a href="register.html" class="auth-btn">注册</a>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 轮播图区域 -->
+    <div class="carousel">
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="image1.jpg" alt="旅行照片">
+                <div class="caption">美丽的旅行回忆</div>
+            </div>
+            <!-- 更多轮播图片 -->
+        </div>
+        <button class="carousel-btn prev">&#10094;</button>
+        <button class="carousel-btn next">&#10095;</button>
+    </div>
+
+    <!-- 文章列表区域 -->
+    <main class="content">
+        <div class="article-section">
+            <h2 class="section-title">最新文章</h2>
+            <div class="article-grid">
+                <!-- 文章卡片将通过 JavaScript 动态添加 -->
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚区域 -->
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>联系方式</h3>
+                <p>电话：18819156795</p>
+            </div>
+            <div class="copyright">
+                <p>Copyright © 2024 XZM's Blog All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 在 body 标签结束前添加 -->
+    <script src="script.js"></script>
+    <script src="main.js"></script>
+    <script src="comments.js"></script>
+</body>
+</html> 

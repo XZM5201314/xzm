@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理后台 - 个人博客</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <nav class="admin-nav">
+            <h2>管理后台</h2>
+            <ul>
+                <li><a href="#carousel" class="active">轮播图管理</a></li>
+                <li><a href="#articles">文章管理</a></li>
+                <li><a href="#users">用户管理</a></li>
+                <li><a href="#comments">评论管理</a></li>
+            </ul>
+            <button id="logoutBtn">退出登录</button>
+        </nav>
+        
+        <main class="admin-content">
+            <section id="carousel-section">
+                <h3>轮播图管理</h3>
+                <button id="newCarouselBtn" class="action-btn">添加轮播图</button>
+                <div class="carousel-list">
+                    <!-- 轮播图列表将通过 JavaScript 动态添��� -->
+                </div>
+            </section>
+
+            <section id="articles-section">
+                <h3>文章管理</h3>
+                <button id="newArticleBtn" class="action-btn">新建文章</button>
+                <div class="articles-list">
+                    <!-- 文章列表将通过 JavaScript 动态添加 -->
+                </div>
+            </section>
+
+            <section id="users-section" style="display: none;">
+                <h3>用户管理</h3>
+                <div class="users-list">
+                    <!-- 用户列表将通过 JavaScript 动态添加 -->
+                </div>
+            </section>
+            
+            <section id="comments-section" style="display: none;">
+                <h3>评论管理</h3>
+                <div class="comments-list">
+                    <!-- 评论列表将通过 JavaScript 动态添加 -->
+                </div>
+            </section>
+        </main>
+
+        <!-- 文章编辑对话框 -->
+        <div id="articleDialog" class="dialog" style="display: none;">
+            <div class="dialog-content">
+                <h3 id="dialogTitle">新建文章</h3>
+                <form id="articleForm">
+                    <div class="form-group">
+                        <label for="articleTitle">标题</label>
+                        <input type="text" id="articleTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="articleCategory">分类</label>
+                        <select id="articleCategory" required>
+                            <option value="生活感悟">生活感悟</option>
+                            <option value="旅行见闻">旅行见闻</option>
+                            <option value="技术分享">技术分享</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="articleSummary">摘要</label>
+                        <textarea id="articleSummary" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="articleContent">正文内容</label>
+                        <textarea id="articleContent" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="articleImage">封面图片URL</label>
+                        <input type="url" id="articleImage" required>
+                    </div>
+                    <div class="dialog-buttons">
+                        <button type="submit" class="save-btn">保存</button>
+                        <button type="button" class="cancel-btn" onclick="closeArticleDialog()">取消</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- 轮播图编辑对话框 -->
+        <div id="carouselDialog" class="dialog" style="display: none;">
+            <div class="dialog-content">
+                <h3 id="carouselDialogTitle">添加轮播图</h3>
+                <form id="carouselForm">
+                    <div class="form-group">
+                        <label for="carouselImage">选择图片</label>
+                        <input type="file" id="carouselImage" accept="image/*" required>
+                        <div class="image-preview" id="carouselImagePreview"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="carouselCaption">图片说明</label>
+                        <input type="text" id="carouselCaption" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="carouselOrder">显示顺序</label>
+                        <input type="number" id="carouselOrder" min="1" required>
+                    </div>
+                    <div class="dialog-buttons">
+                        <button type="submit" class="save-btn">保存</button>
+                        <button type="button" class="cancel-btn" onclick="closeCarouselDialog()">取消</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html> 
